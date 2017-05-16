@@ -11,6 +11,7 @@ $q6Error="";
 $expError="";
 /*$q6Error="";
 $expError="";*/
+//checking 
 session_start();
 if(!empty($_SESSION['nameError'])){
 $nameError=$_SESSION['nameError'];
