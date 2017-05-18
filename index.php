@@ -143,7 +143,7 @@ unset($_SESSION['expError']);
 					 <a class="goto pull-right" href="https://www.stumagz.com" >Go to stumagz.com</a>
 				</div>//-->
 				<div class="container-fluid" style="height:100px;background:#18bc9c; padding-left:40px; padding-top:5px;"  >
-					 <center><a href="https://www.stumagz.com" style="cursor:pointer"> <img class="logo pull-left"src="/img/stumagz.svg" width="200px" height="200px"> </a></center>
+					 <center><a href="https://www.stumagz.com" style="cursor:pointer"> <img class="logo pull-left"src="stumagz.svg" width="200px" height="200px"> </a></center>
 					 </div>
 			
 		</header>
@@ -269,7 +269,7 @@ Suggestions
 <a href="https://www.facebook.com/stumagz"><img src="facebook-social-symbol.png" height="23px" width="23px" ></a>
 <a href="https://www.instagram.com/stumagz/"><img src="instagram-logo.png" height="24px" width="24px" ></a> &nbsp;
 <a href="https://twitter.com/StuMagz"><img src="twitter-social-outlined-logo.png" height="26px" width="26px" ></a> &nbsp;
-<a href="https://www.youtube.com/channel/UCLMHUneYEQYxLSU4_rmT_pA"><img src="youtube-logotype.png." height="26px" width="26px" >
+<a href="https://www.youtube.com/channel/UCLMHUneYEQYxLSU4_rmT_pA"><img src="youtube-logotype.png" height="26px" width="26px" >
 </a>
 </td>
 </tr>
