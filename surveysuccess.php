@@ -137,9 +137,188 @@ if($nameErr==" "&& $collegeErr==" "&& $ratingErr==" " && $q1Err==" " && $q2Err==
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>success</title>
-<link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="css/materialize.min.css" >
-<link rel="stylesheet" href="css/styles.css" >
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+<style type="text/css">
+	@import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
+
+header {
+    text-align: center;
+    color: #fff;
+    background: #18bc9c;
+    position: relative;
+    width:100%;
+    z-index: 1;
+    height:500px;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+header .container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+label
+{
+  font-family: Helvetica;
+
+}
+.form_interns
+{
+
+font-family: Helvetica;
+
+}
+header img {
+    display: block;
+    margin: 0 auto 20px;
+}
+
+header .intro-text .name {
+    display: block;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+header .intro-text .skills {
+    font-size: 1.25em;
+    font-weight: 400;
+}
+
+hr.star-light,
+hr.star-primary {
+    margin: 25px auto 30px;
+    padding: 0;
+    max-width: 250px;
+    border: 0;
+    border-top: solid 5px;
+    text-align: center;
+}
+
+hr.star-light:after,
+hr.star-primary:after {
+    content: "\f005";
+    display: inline-block;
+    position: relative;
+    top: -.8em;
+    padding: 0 .25em;
+    font-family: FontAwesome;
+    font-size: 2em;
+}
+
+hr.star-light {
+    border-color: #fff;
+}
+
+hr.star-light:after {
+    color: #fff;
+    background-color: #18bc9c;
+}
+
+hr.star-primary {
+    border-color: #2c3e50;
+}
+
+hr.star-primary:after {
+    color: #2c3e50;
+    background-color: #fff;
+}
+
+.stu-img
+{
+
+  height:40px;
+}
+
+section {
+    padding: 50px 0;
+    width: 100%;
+}
+
+section h2 {
+    margin: 0;
+    font-size: 3em;
+}
+
+.submit:hover
+{
+  color:#fff;
+}
+.logo
+{
+  height:50px;margin:40px;
+}
+.goto,.goto:hover,.goto:focus
+{
+  cursor:pointer;
+  text-decoration:none;
+  color:#fff;
+  font-size:18px;
+  margin:40px;
+}
+.flex_content
+{
+  height: 500px;
+  display:flex;
+}
+.child
+{
+  margin:auto;
+  display: flex;
+}
+h2
+{
+  text-align: center;
+  font-size: 40px;
+  color: #fff;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.check
+{
+  height:100px;
+  margin:auto;
+}
+@media only screen and (max-width:767px)
+{
+  .check
+  {
+    height:60px;
+    margin:auto;
+  }
+
+  h2
+  {
+    font-size:28px;
+  }
+  header .container {
+      padding-top: 0px;
+      padding-bottom: 50px;
+  }
+  .goto,.goto:hover,.goto:focus
+  {
+    cursor:pointer;
+    text-decoration:none;
+    color:#fff;
+    margin:20px;
+    font-size:12px;
+  }
+  .logo
+  {
+    height: 30px;
+    margin:15px;
+  }
+}
+.input-field input
+{
+  color:rgba(0,0,0,0.75);
+}
+.input-field label
+{
+  font-weight: 500;
+}
+</style>
 
 <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -149,7 +328,7 @@ if($nameErr==" "&& $collegeErr==" "&& $ratingErr==" " && $q1Err==" " && $q2Err==
 <body style="background: #18bc9c;">
 	<div class="container-fluid" style="height:100px;background:#18bc9c;">
 		 <a href="https://www.stumagz.com" style="cursor:pointer">
-			 <img class="logo pull-left"src="/img/stumagz.svg">
+			 <img class="logo pull-left" src="stumagz.svg">
 		  </a>
 		 <a href="https://www.stumagz.com" class="goto pull-right">Go to stumagz.com</a>
 	</div>
@@ -158,7 +337,7 @@ if($nameErr==" "&& $collegeErr==" "&& $ratingErr==" " && $q1Err==" " && $q2Err==
 		<div class="col-xs-12 col-lg-12">
 			<div class="flex_content">
 				<div class="child">
-					<img class="check"src="/img/check_white.svg" style="">
+					<img class="check" src="check_white.svg" style="">
 					<h2>Thank You</h2>
 			</div>
 		</div>
