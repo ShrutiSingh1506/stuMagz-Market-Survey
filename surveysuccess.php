@@ -15,7 +15,7 @@ $nameErr = $collegeErr = $ratingErr = $q1Err = $q2Err =$q3Err =$q4Err = $q5Err =
 	} 
      else 
 	{
-		$Name = $_POST["name"];
+		$Name =mysql_real_escape_string($_POST["name"]);
      //check if name only contains letters and whitespace
 		if (!preg_match("/^[a-zA-Z ]*$/",$Name)) 
 		{
@@ -28,81 +28,88 @@ $nameErr = $collegeErr = $ratingErr = $q1Err = $q2Err =$q3Err =$q4Err = $q5Err =
 			$collegeErr = "College name is required ";
 		}
 		 else {
-			$Collegename = $_POST["collegename"];
+			$Collegename =mysql_real_escape_string($_POST["collegename"]);
     // check if name only contains letters and whitespace
 			if (!preg_match("/^[a-zA-Z ]*$/",$Collegename)) {
 				$collegeErr = "Only letters and white space allowed in College name"; 
 			}
 		}
 
-		if(empty($_POST["rate"]))
+		if((empty($_POST["rate"]))||(($_POST["rate"]!="1")&&($_POST["rate"]!="2")&&($_POST["rate"]!="3")&&($_POST["rate"]!="4")&&($_POST["rate"]!="5")))
 		{
 		 $ratingErr="Please select one on the List";	
 		}
 		else {
-			$Rating= $_POST["rate"];
+			$Rating=mysql_real_escape_string($_POST["rate"]);
 		}
 
-		if(empty($_POST["create"])){
+		if((empty($_POST["create"]))||(($_POST["create"]!="yes")&&($_POST["create"]!="no")))
+		{
 			$q1Err= "Please select one on the List";
 		}
 		else {
-			$Q1= $_POST["create"];  
+			$Q1=mysql_real_escape_string($_POST["create"]);  
 		}
 
 
-		if(empty($_POST["myboard"])){
+		if((empty($_POST["myboard"]))||(($_POST["myboard"]!="My feed")&&($_POST["myboard"]!="My Board")&&($_POST["myboard"]!="My College")&&($_POST["myboard"]!="Don't know")))
+		{
+
 			$q2Err= "Please select one on the List";
 		}
 		else {
-			$Q2= $_POST["myboard"];
+			$Q2=mysql_real_escape_string($_POST["myboard"]);
 
 		}
 
 
-		if(empty($_POST["follow"])){
+		if((empty($_POST["follow"]))||(($_POST["follow"]!="yes")&&($_POST["follow"]!="no")))
+		{
 			$q3Err= "Please select one on the List";
 		}
 		else {
-			$Q3= $_POST["follow"];
+			$Q3=mysql_real_escape_string($_POST["follow"]);
 
 		}
 
 
-		if(empty($_POST["feed"])) {
+		if((empty($_POST["feed"]))||(($_POST["feed"]!="My Board")&&($_POST["feed"]!="My College")&&($_POST["feed"]!="My Feed")&&($_POST["feed"]!="Don't know")))
+		{ 
 			$q4Err= "Please select one on the List";
 		}
 		else {
-			$Q4= $_POST["feed"];
+			$Q4=mysql_real_escape_string($_POST["feed"]);
 
 		}
 
 
-		if(empty($_POST["connect"])){
+		if((empty($_POST["connect"]))||(($_POST["connect"]!="yes")&&($_POST["connect"]!="no")))
+		{
 			$q5Err= "Please select one on the List";
 		}
 		else {
-			$Q5= $_POST["connect"];
+			$Q5= mysql_real_escape_string($_POST["connect"]);
 
 		}
 
 
-		if(empty($_POST["board"])){
+		if((empty($_POST["board"]))||(($_POST["board"]!="yes")&&($_POST["board"]!="no")))
+		{
 			$q6Err= "Please select one on the List";
 		}
 		else {
-			$Q6= $_POST["board"];
+			$Q6=mysql_real_escape_string($_POST["board"]);
 
 		}
 
 
 
-		if(empty($_POST["experience"]))
+		if((empty($_POST["experience"]))||(($_POST["experience"]!="Awesome")&&($_POST["experience"]!="Nice and friendly")&&($_POST["experience"]!="confusing")))
 		{
 			$expErr= "Please select one on the List";
 		}
 		else {
-			$Experience= $_POST["experience"];
+			$Experience=mysql_real_escape_string($_POST["experience"]);
 
 		}
 
@@ -128,7 +135,12 @@ if($nameErr==" "&& $collegeErr==" "&& $ratingErr==" " && $q1Err==" " && $q2Err==
 
 	$stmt = $conn->prepare("INSERT INTO survey(Name,College_Name,Rating,Q1,Q2,Q3,Q4,Q5,Q6,Experience,Suggestions) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
 	$stmt->bind_param("sssssssssss", $Name,$Collegename,$Rating,$Q1,$Q2,$Q3,$Q4,$Q5,$Q6,$Experience,$Suggestions);
-	$stmt->execute();
+	$er=$stmt->execute();
+	if(!$er) {
+		echo "error";
+	}
+	else
+	{
 	mysqli_close($conn);
 ?>
 <html>
@@ -355,6 +367,7 @@ h2
 
 </html>
 <?php 
+}
 
 } 
 else {
@@ -370,7 +383,7 @@ else {
 	$_SESSION['q5Error']=$q5Err;
 	$_SESSION['q6Error']=$q6Err;
 	$_SESSION['expError']=$expErr;
-	header('Location: index?');
+	header('Location: /');
 	exit;
 echo $nameErr;
 echo "<br>";

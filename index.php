@@ -176,7 +176,7 @@ unset($_SESSION['expError']);
 				<!--<div class="col-lg-2 col-md-4 xs-hidden" ></div>//-->
 				<div class="col-lg-10 col-md-12 col-xs-12 " style="padding:0px;">
 			<div class="col-md-12 col-lg-10 col-xs-12">
-<form method="post" name="myForm" action="surveysuccess">
+<form method="post" name="myForm" action="surveysuccess.php">
 <div class="center">
 <font size="5" color="18bc9c">
 
